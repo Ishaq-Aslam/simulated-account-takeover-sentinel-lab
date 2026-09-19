@@ -20,7 +20,7 @@ The goal is to showcase practical experience with Microsoft Sentinel, detection 
 ```mermaid
 flowchart TD
     A[Personal Microsoft Account] --> B[Azure Subscription]
-    A --> C[Microsoft Entra Tenant]
+    A --> C[Personal Microsoft Entra Tenant]
 
     B --> D[Log Analytics Workspace]
     B --> E[Microsoft Sentinel]
@@ -32,10 +32,15 @@ flowchart TD
     H --> I[KQL Investigation]
     I --> J[Analytics Detection Rule]
     J --> K[Microsoft Sentinel Incident]
-    K --> L[Investigation & Response]
+    K --> L[Investigation and Response]
 
     D --> E
     E --> H
+```
+
+## Detection
+
+The analytics rule uses KQL to identify suspicious sign-in activity and generate a Microsoft Sentinel incident for investigation.
 
 ## Detection
 
