@@ -1,0 +1,7 @@
+// Detected repeated failed sign-ins for the same account and IP
+SigninLogs
+| where ResultType != 0
+| summarize FailedAttempts = count()
+    by UserPrincipalName, IPAddress, bin(TimeGenerated, 10m)
+| where FailedAttempts >= 2
+| order by FailedAttempts desc

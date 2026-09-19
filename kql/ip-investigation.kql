@@ -1,0 +1,5 @@
+// Investigated authentication activity associated with a source IP
+SigninLogs
+| where IPAddress == "<REDACT-IP-BEFORE-PUBLICATION>"
+| project TimeGenerated, UserPrincipalName, IPAddress, ResultType, ResultDescription, AppDisplayName, Location
+| order by TimeGenerated desc

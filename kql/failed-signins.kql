@@ -1,0 +1,6 @@
+// Investigated failed authentication events for the lab account
+SigninLogs
+| where UserPrincipalName == "michaelsmith@isaacaslam099gmail.onmicrosoft.com"
+| where ResultType != 0
+| project TimeGenerated, UserPrincipalName, IPAddress, ResultType, ResultDescription, AppDisplayName, Location, DeviceDetail
+| order by TimeGenerated desc
