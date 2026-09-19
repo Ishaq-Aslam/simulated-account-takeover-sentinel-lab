@@ -15,35 +15,27 @@ The goal is to showcase practical experience with Microsoft Sentinel, detection 
 - Identify relevant security controls and response actions, as a security analyst would 
 - Document the investigation in a portfolio ready format
 
-## Lab architecture
-Personal Microsoft account
-        |
-        +-- Azure subscription
-        |      |
-        |      +-- Log Analytics workspace
-        |             |
-        |             +-- Microsoft Sentinel
-        |
-        +-- Personal Microsoft Entra tenant
-               |
-               +-- Dedicated test user
-                      |
-                      +-- Sign-in activity
-                             |
-                             v
-                        SignInLogs
-                             |
-                             v
-                       KQL investigation
-                             |
-                             v
-                    Analytics detection rule
-                             |
-                             v
-                         Incident
-                             |
-                             v
-                    Investigation + response
+## Lab Architecture
+
+```mermaid
+flowchart TD
+    A[Personal Microsoft Account] --> B[Azure Subscription]
+    A --> C[Microsoft Entra Tenant]
+
+    B --> D[Log Analytics Workspace]
+    B --> E[Microsoft Sentinel]
+
+    C --> F[Dedicated Test User]
+    F --> G[Sign-in Activity]
+    G --> H[SignInLogs]
+
+    H --> I[KQL Investigation]
+    I --> J[Analytics Detection Rule]
+    J --> K[Microsoft Sentinel Incident]
+    K --> L[Investigation & Response]
+
+    D --> E
+    E --> H
 
 ## Detection
 
