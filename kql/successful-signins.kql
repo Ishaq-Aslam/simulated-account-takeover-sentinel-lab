@@ -1,6 +1,6 @@
 // Reviewed successful authentication events for the lab account
 SigninLogs
-| where UserPrincipalName == "michaelsmith@labtest@gmail.onmicrosoft.com"
+| where UserPrincipalName == "michaelsmithlabtest@gmail.onmicrosoft.com"
 | where ResultType == 0
 | project TimeGenerated, UserPrincipalName, IPAddress, AppDisplayName, Location, DeviceDetail
 | order by TimeGenerated desc
